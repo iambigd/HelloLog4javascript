@@ -1,0 +1,39 @@
+<!--
+The log4javascript testing
+@author bigd
+@date 2014/9/9
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="js/log4javascript/log4javascript.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/log4jq/log4jq.js"></script>
+        <script type="text/javascript">
+            
+            // Create the logger
+            var log = log4jq.getLogger({loggerName: 'HelloLog4jq'});
+       
+         
+            // Test the logger
+            log.debug("Hello Debug");
+            log.info("Hello Info");
+            log.warn("Hello Warn");
+            log.error("Hello Err");
+            log.debug("current level: " + log.getLevel());
+            
+            //test object
+            var obj = new Object();
+            obj.name = "Octopus";
+            obj.tentacles = 8;
+            log.debug("print obj:",obj);
+            
+        </script>
+    </head>
+    <body>
+        <div>Hello log4jq</div>
+        
+    </body>
+</html>
