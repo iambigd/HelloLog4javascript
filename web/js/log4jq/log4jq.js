@@ -6,8 +6,14 @@
 
 var log4jq = (function() {
     
-    var comp = this;
-  
+    // Create main log4javascript object; this will be assigned public properties
+    function log4jq () {};
+    
+    var log4jq = new log4jq();
+    log4jq.version = '0.0.1';
+    log4jq.author = 'bigd';
+    log4jq.github = 'https://github.com/iambigd';
+    
     //default config
     var settings = {
         loggerName: 'log4jq',
@@ -18,7 +24,7 @@ var log4jq = (function() {
         }
     };
   
-    comp.getLogger = function(_settings){
+    log4jq.getLogger = function(_settings){
        
         var  opts = $.extend(settings,_settings);//jquery method
         
@@ -69,9 +75,11 @@ var log4jq = (function() {
         return log4jLv;
     };
 
-    return comp;
+    window.log4jq = log4jq;
+
+    return log4jq;
     
-}());
+})();
 
 
 
