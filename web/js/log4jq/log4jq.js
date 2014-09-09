@@ -24,6 +24,7 @@ var log4jq = (function() {
         }
     };
   
+   //public method
     log4jq.getLogger = function(_settings){
        
         var  opts = $.extend(settings,_settings);//jquery method
@@ -45,6 +46,7 @@ var log4jq = (function() {
         return log;
     };
     
+    //private method
     _getLogLv = function(lv){
         var log4jLv = null;
         switch (lv){
@@ -76,9 +78,8 @@ var log4jq = (function() {
     };
 
     window.log4jq = log4jq;
-
     return log4jq;
-    
+
 })();
 
 
